@@ -9,7 +9,7 @@
   },
   "transform": [
     {
-      "lookup": "properties.Name",
+      "lookup": "properties.NAME",
       "from": {
         "data": {
           "url": "https://raw.githubusercontent.com/yongkangNi/FIT3179/main/10-15-2020.csv"
@@ -18,7 +18,7 @@
         "fields": ["Active", "Confirmed", "Recovered", "Deaths", "Population"]
       }
     },
-    {"calculate": "datum.Deaths/datum.Confirmed", "as": "Death Rate"}
+    {"calculate": "datum.Deaths/datum.Confirmed*100", "as": "Death per 100 Confirmed"}
   ],
   "projection": {"type": "equalEarth"},
   "mark": {"type": "geoshape"},
@@ -28,7 +28,7 @@
       "type": "quantitative",
       "scale": {
         "type": "threshold",
-        "domain": [0.001, 0.02, 0.05, 0.1, 0.2],
+        "domain": [1, 2, 5, 10, 20],
         "range": [
           "#ffffd4",
           "#fee391",
@@ -46,6 +46,5 @@
       {"field": "Recovered", "type": "quantitative"},
       {"field": "Deaths", "type": "quantitative"}
     ]
-  },
-  "config": {}
+  }
 }
