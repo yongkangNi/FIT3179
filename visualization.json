@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "COVID-19 Active Cases (10 15 2020)",
+  "title": "COVID-19 Active Cases (10 23 2020)",
   "width": 900,
   "height": 400,
   "data": {
@@ -19,19 +19,19 @@
       }
     },
     {
-      "calculate": "datum.Deaths/datum.Confirmed*100000",
-      "as": "Death in per 100000 Confirmed"
+      "calculate": "datum.Deaths/datum.Confirmed*10000",
+      "as": "Death in per 10000 Confirmed"
     }
   ],
   "projection": {"type": "equalEarth"},
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Death in per 100 Confirmed",
+      "field": "Death in per 10000 Confirmed",
       "type": "quantitative",
       "scale": {
         "type": "threshold",
-        "domain": [1, 2, 5, 10, 20],
+        "domain": [1, 100, 300,500,1000],
         "range": [
           "#ffffd4",
           "#fee391",
