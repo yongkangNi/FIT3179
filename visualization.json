@@ -12,15 +12,15 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/yongkangNi/FIT3179/main/covid_10_10_2020.csv"
+          "url": "https://raw.githubusercontent.com/yongkangNi/FIT3179/main/covid19_23_10_Oct_2020.csv"
         },
         "key": "Country",
         "fields": ["Active", "Confirmed", "Recovered", "Deaths"]
       }
     },
     {
-      "calculate": "datum.Deaths/datum.Confirmed*100",
-      "as": "Death in per 100 Confirmed"
+      "calculate": "datum.Deaths/datum.Confirmed*100000",
+      "as": "Death in per 100000 Confirmed"
     }
   ],
   "projection": {"type": "equalEarth"},
