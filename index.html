@@ -12,13 +12,24 @@
   
 </head>
 <body>
+  <h1>Multiple Visualisations</h1>
   
+  <h2>This is the first visualisation</h2> 
 <div id="visualization"></div>
 
-<script type="text/javascript">
+  <h2>This is the second visualisation</h2>
+<div id="scatter_plot"></div>
 
-  var spec2 = "https://raw.githubusercontent.com/yongkangNi/FIT3179/main/visualization.json";
-  vegaEmbed('#visualization', spec2).then(function(result) {
+  <script type="text/javascript">
+
+  var visulisation1 = "https://raw.githubusercontent.com/yongkangNi/FIT3179/main/visualization.json";
+  vegaEmbed('#visualization', visualisation1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+    
+    
+    var visulisation2 = "https://raw.githubusercontent.com/yongkangNi/FIT3179/main/visualization2.json";
+  vegaEmbed('#scatter_plot', visualisation2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
