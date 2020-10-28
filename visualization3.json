@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/yongkangNi/FIT3179/main/covid19_23_10_Oct_2020.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.Confirmed/datum.Population*10000",
+      "as": "Confirmed in per 10000 population"
+    }
+  ],
+  "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+  "encoding": {
+    "x": {"field": "Continent", "type": "nominal"},
+    "y": {"aggregate": "sum", "field": "Confirmed in per 10000 population"},
+    "color": {
+      "type": "nominal",
+      "field": "Continent",
+      "scale": {
+        "domain": [
+          "Asia",
+          "Oceania",
+          "Europe",
+          "Africa",
+          "North America",
+          "South America"
+        ],
+        "range": [
+          "#feb24c",
+          "#67a9cf",
+          "#636363",
+          "#f03b20",
+          "#08519c",
+          "#31a354"
+        ]
+      },
+      "title": "Continent",
+      "legend": {"orient": "right"}
+    },
+    "tooltip": [
+      {"field": "Confirmed", "type": "quantitative", "format": ","},
+      {"field": "Active", "type": "quantitative", "format": ","},
+      {"field": "Recovered", "type": "quantitative", "format": ","},
+      {
+        "field": "Confirmed in per 10000 population",
+        "type": "quantitative",
+        "format": ".0f"
+      }
+    ]
+  },
+  "config": {}
+}
