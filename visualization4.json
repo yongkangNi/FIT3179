@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "A Rectangular Unit-Chart",
   "title": "Covid-19",
-  "width": 600,
-  "height": 500,
+  "width": 200,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/yongkangNi/FIT3179/main/covid19_23_10_Oct_2020.csv"
   },
