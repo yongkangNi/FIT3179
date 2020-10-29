@@ -1,38 +1,87 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-  <!-- Import vega-embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/yongkangNi/FIT3179/main/style.css" media="all">
-  
-</head>
-<body>
-  <h1>Multiple Visualisations</h1>
-  
-  <h2>This is the first visualisation</h2> 
-<div id="visualization"></div>
+  <head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <!-- Import vega-embed -->
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-  <h2>This is the second visualisation</h2>
-<div id="scatterplot"></div>
+    <!-- CSS file -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://raw.githubusercontent.com/yongkangNi/FIT3179/main/style.css"
+      media="all"
+    />
+    <style>
+      section {
+        display: flex;
+        margin-top: 30px;
+      }
+      body{
+        width: 1200px;
+        margin-left: 20%;
+      }
+    </style>
+  </head>
 
-  <script type="text/javascript">
+  <body>
+    <h1>Multiple Visualisations</h1>
+    <p>some visualization to explore the COVID-19 in the worldwide</p>
 
-  var visulisation1 = "https://raw.githubusercontent.com/yongkangNi/FIT3179/main/visualization.json";
-  vegaEmbed('#visualization', visualisation1).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-    
-    
-    var visulisation2 = "https://raw.githubusercontent.com/yongkangNi/FIT3179/main/visualization2.json";
-  vegaEmbed('#scatterplot', visualisation2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+    <section>
+      <div>
+        <h2>This is the 1 visualisation</h2>
+        <p>
+          Map: within the choropleth shows that there is some country have
+          higher death rate in the dark color like Mexico, china, Italy and
+          Canada
+        </p>
+      </div>
+      <div id="v1"></div>
+    </section>
 
-</body>
+    <section>
+      <div id="v2"></div>
+      <div>
+        <h2>This is the 2 visualisation</h2>
+        <p>
+          Bar: in the bar char, the amount of confirmed in per 10000 population
+          have the highest value which means that in this outbreak of virus that
+          have a huge impact and the slower response in the virus protection in
+          the Asia.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <h2>This is the 3 visualisation</h2>
+        <p>
+          Radial plot: in the Radial, it illustrates that the amount of active,
+          death, confirmed, Recovered in the different country.
+        </p>
+        <p>
+          Scatter plot: in the Scatter plot, it shows the relationship between
+          the total population and confirmed cases in the different continents.
+          The size is using the deaths per 10,000 confirmed. As we known that
+          United states of America is suffering from the COVID-19 with lot of
+          confirmed cases, but the deaths are controlled relatively in a
+          standard amount.
+        </p>
+      </div>
+      <div id="v3"></div>
+      <div id="v4"></div>
+    </section>
+
+
+
+    <script type="text/javascript">
+      vegaEmbed("#v1", "visualization.json");
+      vegaEmbed("#v2", "visualization2.json");
+      vegaEmbed("#v3", "visualization3.json");
+      vegaEmbed("#v4", "visualization4.json");
+    </script>
+  </body>
 </html>
