@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "A Rectangular Unit-Chart",
+  "description": "A A simple radial chart",
   "title": "Covid-19",
   "width": 200,
   "height": 300,
