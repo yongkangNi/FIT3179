@@ -221,7 +221,7 @@
     "theta": {"field": "value", "type": "quantitative", "stack": true},
     "radius": {
       "field": "value",
-      "scale": {"type": "sqrt", "zero": true, "rangeMin": 100}
+      "scale": {"type": "sqrt", "zero": true, "rangeMin": 50}
     },
     "color": {
       "field": "key",
