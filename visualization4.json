@@ -228,8 +228,8 @@
       "type": "nominal",
       "title": "condition",
       "scale": {
-        "domain": ["Active", "Confirmed", "Deaths", "Recovered"],
-        "range": ["#feb24c", "#f03b20", "#636363", "#67a9cf"]
+        "domain": ["Active", "Deaths", "Recovered"],
+        "range": ["#feb24c", "#636363", "#67a9cf"]
       }
     },
     "tooltip": [
