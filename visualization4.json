@@ -206,7 +206,7 @@
     {
       "filter": "(Country_select == null && datum.Country == 'Afghanistan') || datum.Country == Country_select "
     },
-    {"fold": ["Confirmed", "Deaths", "Active", "Recovered"]}
+    {"fold": [ "Deaths", "Active", "Recovered"]}
   ],
   "layer": [
     {"mark": {"type": "arc", "innerRadius": 25, "stroke": "#2c1db3"}},
