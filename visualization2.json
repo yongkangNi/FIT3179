@@ -8,14 +8,14 @@
   },
   "params": [
     {
-      "name": "Population",
+      "name": "Deaths",
       "value": 0,
       "bind": {
         "input": "range",
         "min": 0,
-        "max": 100000000,
-        "step": 1000000,
-        "name": " Population: "
+        "max": 210000,
+        "step": 1,
+        "name": " Deaths: "
       }
     },
     {
@@ -48,7 +48,7 @@
     {"filter": "datum.Deaths > 0"},
     {"filter": "datum.Confirmed>0"},
     {"filter": "datum.Active>0"},
-    {"filter": "datum.Population > Population"},
+    {"filter": "datum.Deaths > Deaths"},
     {"filter": "Continent == null || datum.Continent == Continent"},
     {
       "calculate": "datum.Deaths/datum.Confirmed * 10000",
@@ -66,8 +66,8 @@
     "y": {
       "field": "Confirmed",
       "type": "quantitative",
-      "axis": {"tickCount": 9},
-      "scale": {"type": "log", "domain": [1, 10000000000]}
+      "axis": {"tickCount": 7},
+      "scale": {"type": "log", "domain": [1, 100000000]}
     }
   },
   "layer": [
