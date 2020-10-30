@@ -13,8 +13,8 @@
   ],
   "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
   "encoding": {
-    "x": {"field": "Continent", "type": "nominal"},
-    "y": {"aggregate": "sum", "field": "Confirmed in per 10000 population"},
+    "y": {"field": "Continent", "type": "nominal"},
+    "x": {"aggregate": "sum", "field": "Confirmed in per 10000 population"},
     "color": {
       "type": "nominal",
       "field": "Continent",
